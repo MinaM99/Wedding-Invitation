@@ -658,7 +658,7 @@ body.preloader-site {
   background-image: url(../image/divider-flowers-leaves.png);
   background-position: bottom -30px center;
   background-repeat: no-repeat;
-  background-size: initial;
+  background-size: 25%;
 }
 
 .instagram {
