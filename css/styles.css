@@ -56,14 +56,61 @@ html {
 
 
 .hero {
-  background-image: url(https://picsum.photos/id/25/1920/1080);
-  background: linear-gradient(rgba(66, 103, 139, 0.65), rgba(66, 103, 139, 0.65)), rgba(0, 0, 0, 0.55) url("https://picsum.photos/id/381/1920/1080") no-repeat;
-  background-attachment: fixed;
+  position: relative;
+  background: transparent;
   background-size: cover;
   color: white;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   font-family: 'Raleway', sans-serif;
   padding-top: 70px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(66, 103, 139, 0.65), rgba(66, 103, 139, 0.65)), rgba(0, 0, 0, 0.55);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-slider {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100vh !important;
+  z-index: -1;
+}
+
+.hero-slider .swiper-slide {
+  height: 100vh;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed;
+}
+
+.hero-body,
+.hero-foot,
+.navbar-brand.is-fixed-top {
+  position: relative;
+  z-index: 10 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.hero.is-large .hero-body {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.hero-body > * {
+  position: relative;
+  z-index: 10;
 }
 
 
@@ -458,7 +505,13 @@ vertical-align: middle;
   border-radius: 50%;
   font-size: 2rem;
   box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
+  transition: opacity 0.3s;
 }
+
+#toTop:hover {
+  background-color: #62809A;
+}
+
 
 #toTop a {
   color: white;

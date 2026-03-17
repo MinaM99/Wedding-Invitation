@@ -57,6 +57,26 @@ function scrollToTop() {
 $(document).ready(function($) {
   $(".preloader-wrapper").fadeOut();
   $("body").removeClass("preloader-site");
+
+  // Initialize Hero Background Slider
+  if (typeof Swiper !== 'undefined') {
+    const heroSlider = new Swiper('.hero-slider', {
+      loop: true,
+      effect: 'fade',
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      speed: 1000,
+      fadeEffect: {
+        crossFade: true
+      },
+      pagination: {
+        el: '.hero-slider .swiper-pagination',
+        clickable: true,
+      },
+    });
+  }
 });
 $(window).load(function() {
   var Body = $("body");

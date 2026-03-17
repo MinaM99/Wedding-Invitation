@@ -17,10 +17,12 @@
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/bulma-tooltip@0.1.5/dist/bulma-tooltip.min.css" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" /> 
-    <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.countdown.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/jquery.coundown.js"></script>
+    <link rel="icon" type="image/png" href="image/m&pLogo.png" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23064379-20"></script>
     <!-- Begin Script for Countdown -->
@@ -49,6 +51,17 @@
     <div class="header-wrapper" id="home">
       <!-- Begin Hero -->
       <section class="hero is-large">
+        <!-- Hero Background Slider -->
+        <div class="swiper hero-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide foto1"></div>
+            <div class="swiper-slide foto2"></div>
+            <div class="swiper-slide foto3"></div>
+            <div class="swiper-slide foto4"></div>
+            <div class="swiper-slide foto5"></div>
+            <div class="swiper-slide foto6"></div>
+          </div>
+        </div>
         <!-- Begin Mobile Nav -->
         <nav class="navbar is-transparent is-hidden-desktop">
           <!-- Begin Burger Menu -->
@@ -71,13 +84,7 @@
                 <a class="navbar-item" href="#lokasi">
                   Location
                 </a>
-              </div>
-              
-              <div class="navbar-item">
-                <a class="navbar-item" href="#tentang-pasangan">
-                  About the Couple
-                </a>
-              </div>
+              </div>     
               <div class="navbar-item">
                 <a class="navbar-item" href="#rsvp">
                   RSVP
@@ -104,7 +111,7 @@
           </div>
           <!-- Start Countdown -->       
           <div>
-            <ul id="hitungmundur" >
+            <ul id="hitungmundur">
               <li><span class="days">00</span><p class="days_text">Days</p></li>
               <li class="separator">:</li>
               <li><span class="hours">00</span><p class="hours_text">Hours</p></li>
@@ -113,24 +120,16 @@
               <li class="separator">:</li>
               <li><span class="seconds">00</span><p class="seconds_text">Seconds</p></li>
             </ul>
-            <div class="spasi">
-            </div>
+            <div class="spasi"></div>
             <script type="text/javascript">
-              var now = new Date();
-              var day = now.getDate();
-              var month = now.getMonth() + 1;
-              var year = now.getFullYear() + 1;
-          
-              var nextyear = month + '/' + day + '/' + year + ' 07:07:07';
-var harih = '5/22/2026 16:00:00';
-
+              var harih = '5/22/2026 16:00:00';
               $('#hitungmundur').countdown({
-                date: harih, // TODO Date format: 07/27/2017 17:00:00
-                offset: +7, // TODO Your Timezone Offset
+                date: harih,
+                offset: +2, // Cairo timezone
                 day: 'Days',
                 days: 'Days'
               }, function () {
-                // Alert disabled to prevent popup
+                // Callback when countdown ends
               });
             </script>  
           </div>
@@ -152,10 +151,6 @@ var harih = '5/22/2026 16:00:00';
                   <li>
                     <a href="#lokasi">Location</a>
                   </li>
-                  <li>
-                    <a href="#tentang-pasangan">About the Couple</a>
-                  </li>
-
                   <li>
                     <a href="#rsvp">RSVP</a>
                   </li>
@@ -256,7 +251,7 @@ var harih = '5/22/2026 16:00:00';
         </div>
         <div class="space40px"></div>
         <div class="main-content has-text-centered" data-aos="fade-up" data-aos-easing="linear">
-          <a href=https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHU5b2c4dnEycWNmcGpqMTk3aWRlaHQxY2EgbWluYW1haGVyMTAwMEBt&tmsrc=minamaher1000%40gmail.com target="_blank" class="button has-tooltip btn-cta" data-tooltip="Add to Calendar" target="_blank" data-aos="zoom-in">
+<a href=https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHU5b2c4dnEycWNmcGpqMTk3aWRlaHQxY2EgbWluYW1haGVyMTAwMEBt&tmsrc=minamaher1000%40gmail.com target="_blank" class="button has-tooltip btn-cta" data-tooltip="Add to Calendar" target="_blank" data-aos="zoom-in">
             Add to Calendar
           </a>
         </div>
@@ -279,7 +274,7 @@ var harih = '5/22/2026 16:00:00';
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.682968617052!2d31.4395183!3d30.074620699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840c63cc84ef7%3A0xe256ff3a93e9c315!2sRenaissance%20Cairo%20Mirage%20City%20Hotel!5e0!3m2!1sen!2seg!4v1773698022348!5m2!1sen!2seg" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div class="space40px"></div>
           <div class="has-text-centered" data-aos="fade-up" data-aos-easing="linear">
-            <a href="https://maps.app.goo.gl/RxoZ9qhqkRLxVaPe9" class="button btn-cta" target="_blank" data-aos="zoom-in">
+<a href="https://maps.app.goo.gl/RxoZ9qhqkRLxVaPe9" class="button btn-cta" target="_blank" data-aos="zoom-in">
               Open in Google Maps
             </a>
           </div>
@@ -287,93 +282,6 @@ var harih = '5/22/2026 16:00:00';
       </section>
       <!-- End Lokasi Content -->
 
-      <!-- Begin About the Couple Section -->
-      <section class="section-light regular-section is-fullheight" id="tentang-pasangan">
-        <div class="container">
-          <div class="columns is-multiline">  
-          <div class="column has-text-centered is-12 prolog">
-            <h1 class="title has-text-centered section-title" data-aos="fade-up" data-aos-easing="linear"> About Mina & Phoebe</h1>
-            
-
-          
-          <!-- IMAGES -->  
-        <div class=" tile">
-          <div class="tile is-ancestor">
-          <div class="tile is-parent">
-            <article class="tile is-child foto1 notification foto1" data-aos="fade-up" data-aos-easing="linear">
-              <div class="content">
-                <p class="title-foto">Photo 1</p>
-                <p class="subtitle-foto">
-                  First time we met at <a href="https://google.com" target="_blank">Place Name</a>
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="tile is-parent">
-            <article class="tile is-child notification foto2" data-aos="fade-up" data-aos-easing="linear">
-              <div class="content">
-                <p class="title-foto">
-                  Photo 2
-                </p>
-                <p class="subtitle-foto">
-                  Same office, same division, seats back to back.
-                </p>   
-              </div>            
-            </article>
-          </div>
-          <div class="tile is-parent">
-            <article class="tile is-child notification foto3" data-aos="fade-up" data-aos-easing="linear">
-              <div class="content">  
-                <p class="title-foto">
-                  Photo 3
-                </p>
-                <p class="subtitle-foto">
-                  Love story begins
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-      <div class="space24px"></div>
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child notification foto6" data-aos="fade-up" data-aos-easing="linear">
-            <div class="content">
-              <p class="title-foto">Photo 4</p>
-                 <p class="subtitle-foto">Family meeting</p>
-            </div>
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child notification foto4" data-aos="fade-up" data-aos-easing="linear">
-            <div class="content">
-              <p class="title-foto">Photo 5</p>
-                  <p class="subtitle-foto">Engagement</p>
-            </div>
-          </article>
-        </div>
-        <div class="tile is-parent">              
-          <article class="tile is-child notification foto5" data-aos="fade-up" data-aos-easing="linear">
-            <div class="content">
-              <p class="title-foto">Photo 6</p>
- <p class="subtitle-foto">Married</p>
-            </div>
-          </article>
-        </div>
-      </div>   
-          <!-- IMAGES -->
-          <div class="space40px"></div>
-            <div data-aos="fade-up" data-aos-easing="linear">
-              <img src="image/divider-leaves.png" class="divider has-vertically-align" alt="~~~">
-            </div> 
-            <div class="space40px"></div>
-            <div class="space40px"></div>
-
-          </div>
-        </div>
-      </section>
-      <!-- End About the Couple Section -->
 
       <!-- Begin RSVP Content -->
       <section class="section-dark contact" id="rsvp">
@@ -458,12 +366,12 @@ var harih = '5/22/2026 16:00:00';
       <i class="fas fa-chevron-up"></i>
     </button>
     <!-- End To Top -->
-
+    
     <!-- Scripts -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/menikah.js"></script>
+  <script src="js/menikah.js"></script>
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <script>
