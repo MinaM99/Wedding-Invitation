@@ -25,7 +25,7 @@ html {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255,255,255,0.95);
+  background: rgba(216,232,242,0.95);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
@@ -47,17 +47,17 @@ html {
 }
 
 .navbar-item.is-active{
-  border-bottom: 2px solid #996E6D;
+  border-bottom: 2px solid #42678B;
 }
 
 .a.navbar-item{
-  font-color: #996E6D;
+  color: #42678B;
 }
 
 
 .hero {
   background-image: url(https://picsum.photos/id/25/1920/1080);
-  background: linear-gradient(rgba(153, 110, 109, 0.65), rgba(153, 110, 109, 0.65)), rgba(0, 0, 0, 0.55) url("https://picsum.photos/id/381/1920/1080") no-repeat;
+  background: linear-gradient(rgba(66, 103, 139, 0.65), rgba(66, 103, 139, 0.65)), rgba(0, 0, 0, 0.55) url("https://picsum.photos/id/381/1920/1080") no-repeat;
   background-attachment: fixed;
   background-size: cover;
   color: white;
@@ -121,17 +121,17 @@ html {
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li.is-active a {
-  border-bottom: 2px solid #996E6D;
+  border-bottom: 2px solid #42678B;
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a {
-  color: #996E6D;
+  color: #42678B;
 }
 
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a:hover {
-  color: #996E6D;
+  color: #42678B;
   transition: all .2s ease-in-out;
-  border-bottom: 2px solid #c28285;
+  border-bottom: 2px solid #62809A;
 }
 
 
@@ -150,12 +150,12 @@ html {
 }
 
 .main-content .section-dark {
-  background-color: #F4E2E2;
+  background-color: #D8E8F2;
   padding: 80px 40px;
 }
 
 .main-content .section-darker {
-  background-color: #EDD2D1;
+  background-color: #A1BFDD;
   padding: 80px 40px;
 }
 
@@ -176,9 +176,9 @@ html {
 }
 
 .main-content .section-dark.resume button {
-  border: 2px solid #996E6D;
+  border: 2px solid #42678B;
   background: white;
-  color: #996E6D;
+  color: #42678B;
   height: 50px;
   width: 250px;
   font-size: 1rem;
@@ -186,7 +186,7 @@ html {
 }
 
 .main-content .section-dark.resume .fa-download {
-  color: #996E6D;
+  color: #42678B;
 }
 
 .main-content .section-dark.my-work {
@@ -292,7 +292,7 @@ html {
 
 .main-content .section-color.pertanyaan {
   padding: 100px;
-  background-color: #996E6D;
+  background-color: #42678B;
   color: white;
 }
 
@@ -309,7 +309,7 @@ html {
 .main-content .section-title {
   font-family: 'Raleway', sans-serif;
   font-weight: 900;
-  color: #996E6D;
+  color: #42678B;
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: 0px;
@@ -318,7 +318,7 @@ html {
 
 .nama-lengkap {
   font-family: 'Rouge Script', sans-serif;
-  color: #996E6D;
+  color: #42678B;
   font-size: 3.5rem;
   letter-spacing: 0px;
   padding-bottom: 6px;
@@ -328,7 +328,7 @@ html {
 .ampersand {
 font-size: 5rem;
 font-family: 'Rouge Script', sans-serif;
-color: #996E6D;
+color: #42678B;
 line-height: 5rem;
 display: inline-block;
 vertical-align: middle;
@@ -369,7 +369,7 @@ vertical-align: middle;
   line-height: 25px;
   text-align: center;
   vertical-align: middle;
-  background: #c28285;
+  background: #62809A;
   color: whitesmoke;    
 }
 
@@ -425,7 +425,7 @@ vertical-align: middle;
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #996E6D;
+  background-color: #42678B;
   color: white;
   cursor: pointer;
   border-radius: 50%;
@@ -438,18 +438,18 @@ vertical-align: middle;
 }
 
 #toTop:hover {
-  background-color: #BC8887;
+  background-color: #62809A;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: #F4E2E2;
+  background-color: #D8E8F2;
 }
 
 ::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 6px #996E6D;
-  -webkit-box-shadow: inset 0 0 6px #996E6D;
-  background-color: #BC8887;
+  box-shadow: inset 0 0 6px #91AABF;
+  -webkit-box-shadow: inset 0 0 6px #91AABF;
+  background-color: #62809A;
 }
 
 body.preloader-site {
@@ -459,7 +459,7 @@ body.preloader-site {
 .preloader-wrapper {
   height: 100%;
   width: 100%;
-  background: #D8A9A8;
+  background: #B8CCDD;
   position: fixed;
   top: 0;
   left: 0;
@@ -508,10 +508,10 @@ body.preloader-site {
 
 .btn-cta:hover {
   color:white;
-  background-color: #bf7877;
+  background-color: #62809A;
   font-size: 1.2rem;
   border-radius: 10px;
-  border: 2px solid #bf7877;
+  border: 2px solid #62809A;
   width:  210px;
   height: 65px;
   align-items: center;
@@ -519,12 +519,12 @@ body.preloader-site {
 }
 
 .btn-cta {
-  background-color: #996E6D;
+  background-color: #42678B;
   width:  210px;
   height: 65px;
   color: white;
   font-size: 1.2rem;
-  border: 2px solid #996E6D;
+  border: 2px solid #42678B;
   border-radius: 10px;
   align-items: center;
   margin: 1rem;
@@ -572,11 +572,11 @@ body.preloader-site {
 {color:ghostwhite}
 
 
-.dusty-pink {color: #D8A9A8}
-.dusty-pink-lighter {color: #EDD2D1}
-.dusty-pink-lightest {color: #F4E2E2}
-.dusty-pink-darker {color: #BC8887}
-.dusty-pink-darkest {color: #996E6D}
+.icy-blue {color: #42678B}
+.icy-blue-lighter {color: #A1BFDD}
+.icy-blue-lightest {color: #D8E8F2}
+.icy-blue-darker {color: #62809A}
+.icy-blue-darkest {color: #244667}
 
 .tile {
   border-radius: 10px;
@@ -584,7 +584,7 @@ body.preloader-site {
 
 
 .foto1 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/beatriz-perez-moya-M2T1j-6Fn8w-unsplash.jpg");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/beatriz-perez-moya-M2T1j-6Fn8w-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -593,7 +593,7 @@ body.preloader-site {
 
 
 .foto2 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/evelina-friman-hw_sKmjb0ns-unsplash.jpg");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/evelina-friman-hw_sKmjb0ns-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -601,7 +601,7 @@ body.preloader-site {
 }
 
 .foto3 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/jeremy-wong-weddings-464ps_nOflw-unsplash.jpg");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/jeremy-wong-weddings-464ps_nOflw-unsplash.jpg");
   background-size: cover;
   background-position: top;
   background-repeat:no-repeat;
@@ -609,7 +609,7 @@ body.preloader-site {
 }
 
 .foto4 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/jeremy-wong-weddings-K8KiCHh4WU4-unsplash.jpg");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/jeremy-wong-weddings-K8KiCHh4WU4-unsplash.jpg");
   background-size: cover;
   background-position: top;
   background-repeat:no-repeat;
@@ -617,7 +617,7 @@ body.preloader-site {
 }
 
 .foto5 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/nathan-dumlao-5BB_atDT4oA-unsplash.jpg");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/nathan-dumlao-5BB_atDT4oA-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -626,7 +626,7 @@ body.preloader-site {
 
 
 .foto6 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/samantha-gades-x40Q9jrEVT0-unsplash.jpg");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/samantha-gades-x40Q9jrEVT0-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -662,7 +662,7 @@ body.preloader-site {
 }
 
 .instagram {
-  color: #996E6D;
+  color: #42678B;
   font-size: 1.25rem;
   font-weight: 900;
   margin-top: 0.5rem;
@@ -678,6 +678,6 @@ body.preloader-site {
   font-style: italic;
   font-weight: 100;
   letter-spacing: 0.5px;
-  color: #996E6D;
+  color: #42678B;
   line-height: 1.8;
 }
