@@ -39,12 +39,19 @@ window.onscroll = function() {
 };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("toTop").style.display = "block";
-  } else {
-    document.getElementById("toTop").style.display = "none";
+  const toTop = document.getElementById("toTop");
+  if (toTop && (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)) {
+    toTop.style.display = "block";
+  } else if (toTop) {
+    toTop.style.display = "none";
   }
 }
+
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 
 // Preloader
 $(document).ready(function($) {
