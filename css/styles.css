@@ -663,8 +663,8 @@ body.preloader-site {
 }
 
 
-.foto1 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/beatriz-perez-moya-M2T1j-6Fn8w-unsplash.jpg");
+.photo1 {
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/photos/1.JPG");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -672,32 +672,32 @@ body.preloader-site {
 }
 
 
-.foto2 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/evelina-friman-hw_sKmjb0ns-unsplash.jpg");
+.photo2 {
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/photos/6.jpg");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
   min-height: 24rem;
 }
 
-.foto3 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/jeremy-wong-weddings-464ps_nOflw-unsplash.jpg");
+.photo3 {
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/photos/7.jpg");
   background-size: cover;
   background-position: top;
   background-repeat:no-repeat;
   min-height: 24rem;
 }
 
-.foto4 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/jeremy-wong-weddings-K8KiCHh4WU4-unsplash.jpg");
+.photo4 {
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/photos/9.jpg");
   background-size: cover;
   background-position: top;
   background-repeat:no-repeat;
   min-height: 24rem;
 }
 
-.foto5 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/nathan-dumlao-5BB_atDT4oA-unsplash.jpg");
+.photo5 {
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/photos/12.jpg");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -705,8 +705,8 @@ body.preloader-site {
 }
 
 
-.foto6 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/samantha-gades-x40Q9jrEVT0-unsplash.jpg");
+.photo6 {
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.9)), url("../image/photos/19.png");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
