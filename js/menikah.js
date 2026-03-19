@@ -64,7 +64,7 @@ $(document).ready(function($) {
       loop: true,
       effect: 'fade',
       autoplay: {
-        delay: 4000,
+        delay: 1000,
         disableOnInteraction: false,
       },
       speed: 1000,
