@@ -664,7 +664,7 @@ body.preloader-site {
 
 
 .photo1 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/1.jpg");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/1.webp");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -673,7 +673,7 @@ body.preloader-site {
 
 
 .photo2 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/2.jpg");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/2.webp");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -681,7 +681,7 @@ body.preloader-site {
 }
 
 .photo3 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/3.png");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/3.webp");
   background-size: cover;
   background-position: top;
   background-repeat:no-repeat;
@@ -689,7 +689,7 @@ body.preloader-site {
 }
 
 .photo4 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/4.jpg");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/4.webp");
   background-size: cover;
   background-position: top;
   background-repeat:no-repeat;
@@ -697,7 +697,7 @@ body.preloader-site {
 }
 
 .photo5 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/5.jpg");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/5.webp");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -706,7 +706,7 @@ body.preloader-site {
 
 
 .photo6 {
-  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/6.png");
+  background-image: linear-gradient(rgba(36, 70, 103, 0.5), rgba(66, 103, 139, 0.75)), url("../image/photos/6.webp");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
