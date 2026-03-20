@@ -55,65 +55,28 @@ function scrollToTop() {
 
 // Preloader
 $(document).ready(function($) {
-  // List of hero slider images
-  const sliderImages = [
-    'image/photos/1.webp',
-    'image/photos/2.webp',
-    'image/photos/3.webp',
-    'image/photos/4.webp',
-    'image/photos/5.webp',
-    'image/photos/6.webp'
-  ];
+  $(".preloader-wrapper").fadeOut();
+  $("body").removeClass("preloader-site");
 
-  let loadedImages = 0;
-  const totalImages = sliderImages.length;
-
-  function preloadImages() {
-    sliderImages.forEach(src => {
-      const img = new Image();
-      img.onload = () => {
-        loadedImages++;
-        if (loadedImages === totalImages) {
-          hidePreloader();
-        }
-      };
-      img.onerror = () => {
-        setTimeout(hidePreloader, 5000);
-      };
-      img.src = src;
+  // Initialize Hero Background Slider
+  if (typeof Swiper !== 'undefined') {
+    const heroSlider = new Swiper('.hero-slider', {
+      loop: true,
+      effect: 'fade',
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+      },
+      speed: 1000,
+      fadeEffect: {
+        crossFade: true
+      },
+      pagination: {
+        el: '.hero-slider .swiper-pagination',
+        clickable: true,
+      },
     });
   }
-
-  function initHeroSlider() {
-    if (typeof Swiper !== 'undefined') {
-      const heroSlider = new Swiper('.hero-slider', {
-        loop: true,
-        effect: 'fade',
-        autoplay: {
-          delay: 1000,
-          disableOnInteraction: false,
-        },
-        speed: 1000,
-        fadeEffect: {
-          crossFade: true
-        },
-        pagination: {
-          el: '.hero-slider .swiper-pagination',
-          clickable: true,
-        },
-      });
-    }
-  }
-
-  function hidePreloader() {
-    $(".preloader-wrapper").fadeOut(500);
-    $("body").removeClass("preloader-site");
-    initHeroSlider();
-  }
-
-  preloadImages();
-  // Fallback timeout
-  setTimeout(hidePreloader, 10000);
 });
 $(window).load(function() {
   var Body = $("body");
