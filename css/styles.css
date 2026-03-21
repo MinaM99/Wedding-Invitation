@@ -269,7 +269,19 @@ html {
 }
 
 .section-map {
-  padding: 0 0 0 0 ;
+  padding: 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.section-map iframe {
+  width: 100% !important;
+  height: 450px;
+  border: 0;
 }
 
 .main-content .section-light {
