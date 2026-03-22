@@ -36,6 +36,32 @@ html {
 
 .navbar-brand.is-fixed-top {
   position: static !important;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-logo {
+  height: 40px;
+  width: auto;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .mobile-nav-logo {
+    display: none;
+  }
+}
+
+.navbar.is-hidden-desktop::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #B8860B;
+  z-index: 1001;
 }
 
 .navbar-item {
