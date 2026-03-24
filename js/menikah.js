@@ -22,15 +22,22 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-// Smooth Anchor Scrolling
+// Smooth Anchor Scrolling - Fixed
 $(document).on("click", 'a[href^="#"]', function(event) {
+  // Skip RSVP toggle button
+  if (this.id === 'rsvp-toggle') {
+    return;
+  }
+  
   event.preventDefault();
-  $("html, body").animate(
-    {
-      scrollTop: $($.attr(this, "href")).offset().top
-    },
-    500
-  );
+  var href = $(this).attr("href");
+  var $target = $(href);
+  
+  if ($target.length) {
+    $("html, body").stop().animate({
+      scrollTop: $target.offset().top - 50
+    }, 500);
+  }
 });
 
 // When the user scrolls down 20px from the top of the document, show the scroll up button
@@ -82,3 +89,63 @@ $(window).load(function() {
   var Body = $("body");
   Body.addClass("preloader-site");
 });
+
+// RSVP Form Functionality - Pure Vanilla JS
+function initRSVP() {
+  const toggleBtn = document.getElementById('rsvp-toggle');
+  const form = document.getElementById('rsvp-form');
+  const submitForm = document.getElementById('rsvp-form-submit');
+  
+  console.log('RSVP Init - Button:', toggleBtn, 'Form:', form);
+  
+  if (toggleBtn && form) {
+    toggleBtn.addEventListener('click', function(e) {
+      console.log('RSVP button clicked');
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const isHidden = form.classList.contains('hidden');
+      console.log('Form is hidden:', isHidden);
+      
+      if (isHidden) {
+        form.classList.remove('hidden');
+        toggleBtn.textContent = 'Close';
+      } else {
+        form.classList.add('hidden');
+        toggleBtn.textContent = 'RSVP';
+      }
+      
+      return false;
+    });
+  }
+  
+  if (submitForm) {
+    submitForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const attendance = document.querySelector('input[name="attendance"]:checked');
+      const firstName = document.querySelector('input[name="firstName"]');
+      const lastName = document.querySelector('input[name="lastName"]');
+      
+      if (!attendance || !firstName.value.trim() || !lastName.value.trim()) {
+        alert('Please fill all required fields.');
+        return;
+      }
+      
+      const status = attendance.value === 'attending' ? 'confirmed - we\'ll see you there!' : 'noted.';
+      alert(`Thank you, ${firstName.value} ${lastName.value}! Your RSVP is ${status}`);
+      
+      submitForm.reset();
+      form.classList.add('hidden');
+      toggleBtn.textContent = 'RSVP';
+    });
+  }
+}
+
+// Initialize RSVP when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initRSVP);
+} else {
+  initRSVP();
+}
+

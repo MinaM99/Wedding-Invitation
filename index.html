@@ -20,7 +20,8 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/jquery.coundown.js"></script>
     <link rel="icon" type="image/png" href="image/m&pLogo.png" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -280,17 +281,45 @@
               
                 </p>
      
-              <a href="https://api.whatsapp.com/send?phone=628xxxxxxxxxx&text=Hello%20Bride,%20I%20will%20attend%20the%20wedding&source=&data=" class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
-                <i class="fab fa-whatsapp"></i>
-&nbsp;&nbsp;Notify Bride
-              </a>
-              
-
-          
-              <a href="https://api.whatsapp.com/send?phone=628xxxxxxxxxx&text=Hello%20Groom,%20I%20will%20attend%20the%20wedding&source=&data=" class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
-                <i class="fab fa-whatsapp"></i>
-&nbsp;&nbsp;Notify Groom
-              </a >
+              <a onclick="toggleRSVPForm(event)" class="button btn-rsvp rsvp-button" id="rsvp-toggle" data-aos="zoom-in">
+  RSVP
+</a>
+<div class="rsvp-container" id="rsvp-container">
+  <div class="rsvp-form hidden" id="rsvp-form">
+    <form id="rsvp-form-submit">
+      <div class="field">
+        <label class="label">Attendance *</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="attendance" value="attending" required>
+            <span>I'm Attending</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="attendance" value="not-attending">
+            <span>Not Attending</span>
+          </label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">First Name *</label>
+        <div class="control">
+          <input class="input" type="text" name="firstName" placeholder="Enter first name" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Last Name *</label>
+        <div class="control">
+          <input class="input" type="text" name="lastName" placeholder="Enter last name" required>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+<button type="submit" class="button btn-cta">Submit RSVP</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
               <div class="space40px"></div>
 
               <div class="space40px"></div>
@@ -341,8 +370,18 @@
     <!-- End To Top -->
     
     <!-- Scripts -->
+    <script>
+      // RSVP Form Toggle Function
+      function toggleRSVPForm(event) {
+        event.preventDefault();
+        const form = document.getElementById('rsvp-form');
+        const btn = document.getElementById('rsvp-toggle');
+        
+        form.classList.toggle('hidden');
+        btn.textContent = form.classList.contains('hidden') ? 'RSVP' : 'Close';
+      }
+    </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/menikah.js"></script>
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
