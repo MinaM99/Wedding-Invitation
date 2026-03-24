@@ -94,55 +94,20 @@ $(window).load(function() {
 function initRSVP() {
   const toggleBtn = document.getElementById('rsvp-toggle');
   const form = document.getElementById('rsvp-form');
-  const submitForm = document.getElementById('rsvp-form-submit');
+  // submitForm no longer needed - using form directly
   
   console.log('RSVP Init - Button:', toggleBtn, 'Form:', form);
   
-  if (toggleBtn && form) {
-    toggleBtn.addEventListener('click', function(e) {
-      console.log('RSVP button clicked');
-      e.preventDefault();
-      e.stopPropagation();
-      
-      const isHidden = form.classList.contains('hidden');
-      console.log('Form is hidden:', isHidden);
-      
-      if (isHidden) {
-        form.classList.remove('hidden');
-        toggleBtn.textContent = 'Close';
-      } else {
-        form.classList.add('hidden');
-        toggleBtn.textContent = 'RSVP';
-      }
-      
-      return false;
-    });
-  }
+  // Toggle handler removed - using inline toggleRSVPForm (per request)
+  console.log('Inline RSVP toggle will handle show/hide');
+
   
-  if (submitForm) {
-    submitForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const attendance = document.querySelector('input[name="attendance"]:checked');
-      const firstName = document.querySelector('input[name="firstName"]');
-      const lastName = document.querySelector('input[name="lastName"]');
-      
-      if (!attendance || !firstName.value.trim() || !lastName.value.trim()) {
-        alert('Please fill all required fields.');
-        return;
-      }
-      
-      const status = attendance.value === 'attending' ? 'confirmed - we\'ll see you there!' : 'noted.';
-      alert(`Thank you, ${firstName.value} ${lastName.value}! Your RSVP is ${status}`);
-      
-      submitForm.reset();
-      form.classList.add('hidden');
-      toggleBtn.textContent = 'RSVP';
-    });
-  }
+  // Submit handler moved to inline onclick (prevents reload reliably)
+  console.log('RSVP init complete - using inline submit handler');
+
 }
 
-// Initialize RSVP when DOM is ready
+// Initialize RSVP when DOM is ready (consolidated)
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initRSVP);
 } else {
