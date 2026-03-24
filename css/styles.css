@@ -869,19 +869,24 @@ body.preloader-site {
 .maps-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   background: transparent;
-  border: 2px solid #D4AF37;
+  border: 1.5px solid #D4AF37;
   color: #D4AF37;
-  padding: 0.5rem 1.5rem;
-  border-radius: 25px;
-  font-weight: bold;
-  font-size: 0.9rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.85rem;
   text-decoration: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  letter-spacing: 0.5px;
+}
+
+.maps-btn i {
+  font-size: 0.9rem;
 }
 
 .maps-btn::before {
@@ -1051,6 +1056,52 @@ body.preloader-site {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* RSVP Section - Elegant Dark Invert */
+#rsvp.section-dark {
+  background: linear-gradient(135deg, #244667 0%, #42678B 100%);
+  color: #D8E8F2;
+  padding: 100px 40px;
+}
+
+#rsvp .section-title,
+#rsvp .h2.subtitle {
+  color: #D8E8F2 !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+#rsvp .subtitle {
+  color: #D8E8F2 !important;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+#rsvp .instagram {
+  color: #D4AF37 !important;
+}
+
+#rsvp .btn-whatsapp {
+  background-color: #42678B !important;
+  border-color: #62809A !important;
+  color: #D8E8F2 !important;
+}
+
+#rsvp .btn-whatsapp:hover {
+  background-color: #62809A !important;
+  border-color: #D4AF37 !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(66, 103, 139, 0.4);
+}
+
+#rsvp .divider {
+  filter: brightness(1.3) hue-rotate(40deg);
+}
+
+@media (max-width: 768px) {
+  #rsvp.section-dark {
+    padding: 80px 20px;
+  }
 }
 
 
