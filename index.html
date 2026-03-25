@@ -286,7 +286,7 @@
 </a>
 <div class="rsvp-container" id="rsvp-container">
   <div class="rsvp-form hidden" id="rsvp-form">
-    <form id="rsvp-form-submit">
+<form id="rsvp-form-submit" action="https://formspree.io/f/xwvwevpl" method="POST">
       <div class="field">
         <label class="label">Attendance *</label>
         <div class="control">
@@ -312,9 +312,28 @@
           <input class="input" type="text" name="lastName" placeholder="Enter last name" required>
         </div>
       </div>
+      <div class="field" id="extra-guests-field" style="display: none; opacity: 0; transform: translateY(10px); transition: all 0.4s ease;">
+        <label class="label">Will you be bringing a guest?</label>
+        <div class="control">
+          <div class="guest-options">
+            <label class="guest-radio">
+              <input type="radio" name="guestCount" value="0" checked>
+              <span>Just me</span>
+            </label>
+            <label class="guest-radio">
+              <input type="radio" name="guestCount" value="1">
+              <span>+1 Guest</span>
+            </label>
+            <label class="guest-radio">
+              <input type="radio" name="guestCount" value="2">
+              <span>+2 Guests</span>
+            </label>
+          </div>
+        </div>
+      </div>
       <div class="field">
         <div class="control">
-<button type="button" onclick="handleRSVPSubmit(event)" class="button btn-cta">Submit RSVP</button>
+<button type="submit" class="button btn-cta">Submit RSVP</button>
         </div>
       </div>
     </form>
@@ -371,63 +390,82 @@
     
     <!-- Scripts -->
     <script>
-      // RSVP Form Toggle Function
+      // RSVP Form Toggle Function - Improved smooth transition
       function toggleRSVPForm(event) {
         event.preventDefault();
         const formContainer = document.getElementById('rsvp-form');
         const toggleBtn = document.getElementById('rsvp-toggle');
+        const container = document.getElementById('rsvp-container');
         
-        formContainer.classList.toggle('hidden');
-        toggleBtn.textContent = formContainer.classList.contains('hidden') ? 'RSVP' : 'Close';
+        if (formContainer.classList.contains('hidden')) {
+          container.classList.add('is-open');
+          formContainer.classList.remove('hidden');
+          toggleBtn.textContent = 'Close';
+        } else {
+          formContainer.classList.add('hidden');
+          container.classList.remove('is-open');
+          toggleBtn.textContent = 'RSVP';
+        }
       }
-      
-      // RSVP Submit Handler - Inline to prevent reload
-      async function handleRSVPSubmit(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        console.log('Inline RSVP submit clicked - prevented default');
+
+      // Toggle extra guests field based on attendance with fade-in
+      document.addEventListener('DOMContentLoaded', function() {
+        const attendanceRadios = document.querySelectorAll('input[name="attendance"]');
+        const extraField = document.getElementById('extra-guests-field');
+        const guestRadios = extraField.querySelectorAll('input[name="guestCount"]');
         
+        function updateGuestField() {
+          const attending = document.querySelector('input[name="attendance"][value="attending"]').checked;
+          if (attending) {
+            extraField.style.display = 'block';
+            setTimeout(() => {
+              extraField.classList.add('fade-in');
+            }, 10);
+            // Default to Just me
+            guestRadios[0].checked = true;
+          } else {
+            extraField.classList.remove('fade-in');
+            setTimeout(() => {
+              extraField.style.display = 'none';
+            }, 400);
+          }
+        }
+        
+        attendanceRadios.forEach(radio => radio.addEventListener('change', updateGuestField));
+      });
+      
+      // Formspree native submit handler
+      document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('rsvp-form-submit');
-        const formData = new FormData(form);
         const toggleBtn = document.getElementById('rsvp-toggle');
         const formContainer = document.getElementById('rsvp-form');
         
-        const attendance = formData.get('attendance');
-        const firstName = formData.get('firstName').trim();
-        const lastName = formData.get('lastName').trim();
-        
-        if (!attendance || !firstName || !lastName) {
-          alert('Please fill all required fields.');
-          return;
-        }
-        
-        try {
-          console.log('Posting RSVP to Google Sheets:', {firstName, lastName, attendance});
-          const response = await fetch(window.RSVP_API_URL, {
-            method: 'POST',
-            body: formData
-          });
+        form.addEventListener('submit', function(e) {
+          const formData = new FormData(form);
+          const attendance = formData.get('attendance');
+          const firstName = formData.get('firstName')?.trim();
+          const lastName = formData.get('lastName')?.trim();
+          const guestCount = formData.get('guestCount') || '0';
+          const guestText = guestCount === '0' ? 'Just me' : guestCount === '1' ? '+1 Guest' : '+2 Guests';
           
-        console.log('Raw response:', await response.text());
-        console.log('RSVP POST completed (check sheet)');
-        const status = attendance === 'attending' ? 'confirmed - we\'ll see you there!' : 'noted.';
-        alert(`Thank you, ${firstName} ${lastName}! RSVP sent to sheet: ${status} (Log for details)`);
-        } catch (error) {
-          console.error('RSVP error:', error);
-          const status = attendance === 'attending' ? 'confirmed - we\'ll see you there!' : 'noted.';
-          alert(`Thank you ${firstName} ${lastName}! (${status}) Check console/sheet if needed.`);
-        }
-        
-        form.reset();
-        formContainer.classList.add('hidden');
-        toggleBtn.textContent = 'RSVP';
-      }
+          // Silent submission - removed alerts
+          form.submit(); // Let Formspree handle silently
+          
+          setTimeout(() => {
+            form.reset();
+            const extraField = document.getElementById('extra-guests-field');
+            extraField.classList.remove('fade-in');
+            extraField.style.display = 'none';
+            extraField.style.opacity = '0';
+            extraField.style.transform = 'translateY(10px)';
+            toggleBtn.textContent = 'RSVP';
+          }, 600); // Slightly longer to match new transition
+        });
+      });
     </script>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-window.RSVP_API_URL = 'https://script.google.com/macros/s/AKfycbw_XgvAe_GnrOBQDojEPQgaGLFnqSQ3IVBIxUZ7gocSSdAgrsUaleYajsFlAJTCp0nZ/exec';
-</script>
+<!-- Formspree endpoint in form action - no JS URL needed -->
 <script src="js/menikah.js"></script>
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>

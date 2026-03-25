@@ -40,6 +40,15 @@ html {
   align-items: center;
 }
 
+.navbar-burger span {
+  background-color: #D4AF37 !important;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-burger:hover span {
+  background-color: #C9A75E !important;
+}
+
 .mobile-nav-logo {
   height: 40px;
   width: auto;
@@ -1147,15 +1156,23 @@ body.preloader-site {
 }
 
 #rsvp .rsvp-button:hover {
-  background: linear-gradient(135deg, #B8860B, #D4AF37);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
-  color: white;
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.15), rgba(201, 165, 94, 0.25));
+  border-color: #C9A75E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201, 165, 94, 0.4);
+  color: #D4AF37;
 }
 
 .rsvp-container {
   max-width: 500px;
   margin: 2rem auto 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.rsvp-container.is-open {
+  max-height: 1200px; /* Sufficient for full form */
 }
 
 #rsvp .rsvp-form {
@@ -1165,18 +1182,14 @@ body.preloader-site {
   padding: 2.5rem;
   box-shadow: 0 15px 40px rgba(36, 70, 103, 0.2);
   border: 1px solid rgba(212, 175, 55, 0.3);
-  max-height: 600px;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #rsvp .rsvp-form.hidden {
-  max-height: 0;
   opacity: 0;
-  padding: 0 2.5rem;
-  overflow: hidden;
+  transform: translateY(-15px) scale(0.98);
 }
 
 @keyframes slideDown {
@@ -1201,14 +1214,66 @@ body.preloader-site {
 }
 
 #rsvp .rsvp-form .control label.radio {
-  display: inline-block;
-  margin-right: 2rem;
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
-  color: #42678B;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
-  padding: 0.5rem 0;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #A1BFDD;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #42678B;
+  margin-right: 1rem;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(10px);
+  min-width: 140px;
+  text-align: center;
+  justify-content: center;
+}
+
+#rsvp .rsvp-form .control label.radio:hover {
+  border-color: #C9A75E;
+  background: rgba(201, 165, 94, 0.08);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(201, 165, 94, 0.25);
+}
+
+#rsvp .rsvp-form .control label.radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#rsvp .rsvp-form .control label.radio input[type="radio"]:checked + span {
+  color: #D4AF37;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
+}
+
+#rsvp .rsvp-form .control label.radio input[type="radio"]:checked ~ span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #D4AF37;
+  font-size: 1.2rem;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 0 0 4px rgba(212, 175, 55, 0.8);
+}
+
+#rsvp .rsvp-form .control label.radio span {
+  position: relative;
+  z-index: 1;
   transition: color 0.3s ease;
+}
+
+#rsvp .rsvp-form .control label.radio:active {
+  transform: translateY(0) scale(0.98);
+  transition: transform 0.1s ease;
 }
 
 #rsvp .rsvp-form .control label.radio:hover {
@@ -1250,6 +1315,98 @@ body.preloader-site {
   width: 100%;
 }
 
+#rsvp #extra-guests-field {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#rsvp #extra-guests-field.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+#rsvp .guest-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#rsvp .guest-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #A1BFDD;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #42678B;
+  transition: all 0.3s ease;
+  position: relative;
+  min-width: 120px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+#rsvp .guest-radio:hover {
+  border-color: #C9A75E;
+  background: rgba(201, 165, 94, 0.08);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(201, 165, 94, 0.25);
+}
+
+#rsvp .guest-radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#rsvp .guest-radio input[type="radio"]:checked + span::before {
+  content: '✓';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #D4AF37;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(212, 175, 55, 0.8);
+  z-index: 2;
+}
+#rsvp .guest-radio input[type="radio"]:checked + span {
+  color: #D4AF37;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
+  padding-left: 24px;
+}
+
+#rsvp .guest-radio {
+  /* Active state for elegant press */
+}
+
+#rsvp .guest-radio:active {
+  transform: translateY(0) scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+#rsvp .guest-radio span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  #rsvp .guest-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #rsvp .guest-radio {
+    min-width: 200px;
+    margin-bottom: 0.5rem;
+  }
+}
+
 #rsvp .rsvp-form .button {
   background: transparent;
   border: 2px solid #D4AF37;
@@ -1285,10 +1442,11 @@ body.preloader-site {
 }
 
 #rsvp .rsvp-form .button:hover {
-  background: linear-gradient(135deg, #B8860B, #D4AF37);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.15), rgba(201, 165, 94, 0.25));
+  border-color: #C9A75E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201, 165, 94, 0.4);
+  color: #D4AF37;
 }
 
 #rsvp .rsvp-form .button:hover {
@@ -1311,6 +1469,10 @@ body.preloader-site {
   #rsvp .rsvp-form {
     padding: 2rem 1.5rem;
     margin-top: 1.5rem;
+  }
+  
+  .rsvp-container.is-open {
+    max-height: 1400px;
   }
 }
 

@@ -20,6 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
   }
+
+  // Close mobile menu when navbar link clicked
+  document.querySelectorAll('#mobile-nav .navbar-item a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.navbar-burger').classList.remove('is-active');
+      document.getElementById('mobile-nav').classList.remove('is-active');
+    });
+  });
 });
 
 // Smooth Anchor Scrolling - Fixed
@@ -90,27 +98,5 @@ $(window).load(function() {
   Body.addClass("preloader-site");
 });
 
-// RSVP Form Functionality - Pure Vanilla JS
-function initRSVP() {
-  const toggleBtn = document.getElementById('rsvp-toggle');
-  const form = document.getElementById('rsvp-form');
-  // submitForm no longer needed - using form directly
-  
-  console.log('RSVP Init - Button:', toggleBtn, 'Form:', form);
-  
-  // Toggle handler removed - using inline toggleRSVPForm (per request)
-  console.log('Inline RSVP toggle will handle show/hide');
 
-  
-  // Submit handler moved to inline onclick (prevents reload reliably)
-  console.log('RSVP init complete - using inline submit handler');
-
-}
-
-// Initialize RSVP when DOM is ready (consolidated)
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initRSVP);
-} else {
-  initRSVP();
-}
 
