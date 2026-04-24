@@ -1,4 +1,47 @@
-@import url("https://fonts.googleapis.com/css?family=Lato|Raleway|Rouge+Script");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:ital,wght@0,200;0,300;0,400;1,300&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato|Raleway|Rouge+Script|Ms+Madi");
+
+@font-face {
+  font-family: 'Bickham Script Pro';
+  src: url('./fonts/bickham-script-pro/Bickham Script Pro Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bickham Script Pro';
+  src: url('./fonts/bickham-script-pro/Bickham Script Pro Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bickham Script Pro';
+  src: url('./fonts/bickham-script-pro/Bickham Script Pro Bold.ttf') format('truetype');
+  font-weight:lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Didot';
+  src: url('./fonts/didot-2/Didot.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Didot';
+  src: url('./fonts/didot-2/Didot Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Didot';
+  src: url('./fonts/didot-2/Didot Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
 .has-vertically-aligned-content {
   display: flex;
   flex-direction: column;
@@ -54,6 +97,7 @@ html {
   width: auto;
   margin-right: 12px;
   flex-shrink: 0;
+  margin-left: 5px;
 }
 
 @media (min-width: 1024px) {
@@ -151,12 +195,13 @@ html {
 
 
 .hero .title {
-  font-family: 'Rouge Script', sans-serif;
+  font-family: 'Bickham Script Pro', cursive;
   font-weight: 700;
   transform: rotate(-2deg);
   font-size: 5rem;
   padding-bottom: 5px;
   color: whitesmoke;
+  letter-spacing: 3px;
 }
 
 .hero .subtitle {
@@ -482,18 +527,22 @@ vertical-align: middle;
 
 @media screen and (min-width: 1024px) {
   .regular-section.no-padding-top {
-    padding-top: 300px;
+    padding-top: 320px;
+    padding-bottom: 0px;
   }
   
-  .mplogo {
-    margin-top: 20%;
-    transform: scale(1.3);
-    height: 450px;
-    max-height: 450px;
+
+.mplogo {
+    margin-top: 15%;
+    transform: scale(1.4);
+    height: 480px;
+    max-height: 480px;
+filter: drop-shadow(0 8px 25px rgba(66, 103, 139, 0.3)) drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
   }
+
   .bodytext {
-    margin-bottom: 20%;
-}
+    margin-bottom: 15%;
+  }
 }
 
 @media screen and (min-width: 1400px) {
@@ -819,6 +868,7 @@ body.preloader-site {
 
 
 .instagram {
+    font-family: 'Cinzel', 'Playfair Display', 'Libre Baskerville', Georgia, serif;
   color: #42678B;
   font-size: 1.25rem;
   font-weight: 900;
@@ -829,15 +879,45 @@ body.preloader-site {
   padding: 10px;
 }
 
+
 .bible-verse {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.6rem;
+  font-family: 'Cinzel', 'Playfair Display', 'Libre Baskerville', Georgia, serif;
+  font-size: 1.8rem;
   font-style: italic;
-  font-weight: 100;
-  letter-spacing: 0.5px;
-  color: #42678B;
-  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #244667;
+  line-height: 2.0;
 }
+
+
+
+.verse-reference {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-variant: small-caps;
+  letter-spacing: 2.5px;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #42678B;
+}
+
+
+
+.invitation-text {
+  font-family: 'Montserrat', 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 2.2;
+  letter-spacing: 1.8px;
+  font-variant: small-caps;
+  font-style: normal;
+  color: #244667;
+  padding-bottom: 300px;
+}
+
 
 .full-width-flowers {
   position: relative;
@@ -946,9 +1026,11 @@ body.preloader-site {
 
 .event-image {
   width: 100%;
-  height: 60vh; /* Desktop ~60% of typical card */
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
+  object-position: center;
+  background-color: #f5f5f5;
 }
 
 .event-content {
@@ -960,7 +1042,7 @@ body.preloader-site {
 }
 
 .event-title {
-  font-family: 'Rouge Script', cursive;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 3rem;
   color: #42678B;
   margin-bottom: 1rem;
@@ -990,14 +1072,6 @@ body.preloader-site {
   .event-cards-container {
     flex-direction: row;
   }
-  
-  .event-card:first-child .event-image {
-    object-position: right center; /* Image emphasis right for first card */
-  }
-  
-  .event-card:last-child .event-image {
-    object-position: left center; /* Image emphasis left for second card */
-  }
 }
 
 /* Mobile: vertical stack, image full width top */
@@ -1008,7 +1082,8 @@ body.preloader-site {
   }
   
   .event-image {
-    height: 40vh; /* Full width top on mobile */
+    height: 40vh;
+    object-fit: cover;
   }
   
   .event-cards-container {
@@ -1023,7 +1098,7 @@ body.preloader-site {
 }
 
 .event-date {
-  font-family: 'Rouge Script', cursive;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.8rem;
   color: #D4AF37;
   font-weight: 400;
@@ -1051,14 +1126,31 @@ body.preloader-site {
   text-transform: uppercase;
 }
 
-.gold-divider {
+
+
+.gold-divider, .gold-separator {
   border: none;
   height: 1px;
   background: linear-gradient(90deg, transparent, #D4AF37, transparent);
-  margin: 1.5rem auto;
-  width: 60%;
-  opacity: 0.8;
+  margin: 0.25rem auto 0.5rem auto;
+  width: 30%;
+  opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .gold-separator {
+    width: 60%;
+  }
+  .bible-verse {
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+  .invitation-text{
+    padding-bottom: 0;
+  }
+}
+
+
 
 .map-container {
   margin-top: 2rem;
