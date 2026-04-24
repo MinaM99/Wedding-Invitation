@@ -1,47 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:ital,wght@0,200;0,300;0,400;1,300&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lato|Raleway|Rouge+Script|Ms+Madi");
 
-@font-face {
-  font-family: 'Bickham Script Pro';
-  src: url('./fonts/bickham-script-pro/Bickham Script Pro Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Bickham Script Pro';
-  src: url('./fonts/bickham-script-pro/Bickham Script Pro Semibold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Bickham Script Pro';
-  src: url('./fonts/bickham-script-pro/Bickham Script Pro Bold.ttf') format('truetype');
-  font-weight:lighter;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Didot';
-  src: url('./fonts/didot-2/Didot.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Didot';
-  src: url('./fonts/didot-2/Didot Bold.otf') format('opentype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Didot';
-  src: url('./fonts/didot-2/Didot Italic.otf') format('opentype');
-  font-weight: normal;
-  font-style: italic;
-}
 .has-vertically-aligned-content {
   display: flex;
   flex-direction: column;
@@ -195,7 +154,7 @@ html {
 
 
 .hero .title {
-  font-family: 'Bickham Script Pro', cursive;
+  font-family: 'Ms Madi', sans-serif;
   font-weight: 700;
   transform: rotate(-2deg);
   font-size: 5rem;
@@ -411,7 +370,7 @@ html {
 }
 
 .main-content .section-light.contact {
-  padding: 80px;
+  padding: 80px 80px 40px 80px;
 }
 
 .main-content .section-light.contact button {
@@ -425,7 +384,7 @@ html {
 
 @media (max-width: 599px) {
   .main-content .section-light.contact {
-    padding: 80px 40px;
+    padding: 80px 40px 40px 40px;
   }
 }
 
@@ -452,7 +411,7 @@ html {
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: 0px;
-  padding-bottom: 60px;
+  padding-bottom: 10px;
 }
 
 .nama-lengkap {
