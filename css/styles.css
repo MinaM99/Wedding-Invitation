@@ -498,10 +498,6 @@ vertical-align: middle;
     max-height: 480px;
 filter: drop-shadow(0 8px 25px rgba(66, 103, 139, 0.3)) drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
   }
-
-  .bodytext {
-    margin-bottom: 15%;
-  }
 }
 
 @media screen and (min-width: 1400px) {
